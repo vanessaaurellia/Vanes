@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .navbar {
   background-color:#002B3F!important;
   border-color: #002B3F!important;
+}
+
+.bg-primary{
+  background-color: white!important;
 }
 
 .bg-primary {
@@ -26,7 +32,7 @@ a:hover {
 }
 
 a{
-  color: #53b3cb;
+  color: #002B3F;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
@@ -45,7 +51,7 @@ a{
 .portfolio .portfolio-item .portfolio-item-caption {
   transition: all .5s ease;
   opacity: 0;
-  background-color: #53b3cb;
+  background-color: #002B3F;
 }
 
 footer.footer .social-link {
