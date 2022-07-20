@@ -238,7 +238,9 @@ a:active {
     .navbar-logo {
         margin-left: 20px;
     }
+}
 
+@media screen and (min-width: 1080px) {
     .card.chart {
         flex: 2;
     }
