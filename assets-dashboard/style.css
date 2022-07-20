@@ -161,11 +161,6 @@ a:active {
     flex: 1 auto;
 }
 
-.card.chart {
-    flex: 2;
-
-}
-
 .card .card-inner {
     background-color: #fff;
     background-clip: border-box;
@@ -242,5 +237,9 @@ a:active {
 
     .navbar-logo {
         margin-left: 20px;
+    }
+
+    .card.chart {
+        flex: 2;
     }
 }
