@@ -218,6 +218,11 @@ a:active {
     border-radius: 30px;
 }
 
+.card-body canvas { 
+    width: 100%!important;
+}
+    
+
 @media screen and (min-width: 768px) {
     .sidebar {
         display: block;
