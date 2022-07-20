@@ -150,7 +150,7 @@ a:active {
     padding: 10px;
 }
 
-.card-wrap {
+.card-wrapper {
     display: flex;
     flex-wrap: wrap;
 }
@@ -162,7 +162,8 @@ a:active {
 }
 
 .card.chart {
-    flex: 3 auto;
+    flex: 2;
+
 }
 
 .card .card-inner {

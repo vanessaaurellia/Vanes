@@ -47,3 +47,8 @@ const myChart4 = new Chart(
     document.getElementById('myChart4'),
     config
 );
+
+const myChart5 = new Chart(
+    document.getElementById('myChart5'),
+    config
+);
