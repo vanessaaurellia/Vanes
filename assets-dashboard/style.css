@@ -120,34 +120,38 @@ ul {
     padding: 0;
 }
 
-a:link {
+a {
+    text-decoration: none;
+    color: #1698DA;
+}
+
+a:link.role-button {
     color: #fff;
     text-decoration: none;
 }
 
-a:visited {
+a:visited.role-button {
     color: #fff;
     text-decoration: none;
 }
   
-a:hover {
+a:hover.role-button {
     color: #fff;
     text-decoration: none;
 }
   
-a:active {
+a:active.role-button {
     color: #fff;
     text-decoration: none;
 }
 
 .subtitle {
     font-size: 16px;
-    font-weight: 600;
-    padding: 0px 12px;
+    padding: 12px 12px 0px 12px;
 }
 
 .section {
-    padding: 10px;
+    padding: 12px;
 }
 
 .card-wrapper {
@@ -175,8 +179,23 @@ a:active {
     font-weight: 700;
 }
 
+.card-search {
+    padding: 1.25rem 1.25rem 0rem 1.25rem;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search {
+    border-radius: 10px;
+}
+
 .card-body {
     padding: 0.75rem 1.25rem 0rem 1.25rem;
+}
+
+.card-body.list-events {
+    padding: 1.25rem;
 }
 
 .card-body.large {
@@ -189,6 +208,13 @@ a:active {
     font-size: 14px;
     display: flex;
     flex-direction: row;
+}
+
+.card-footer.view-all {
+    justify-content: flex-end;
+    border-top: 1px solid #c8ced3;
+    padding: 1.25rem;
+    color: #F18700;
 }
 
 .green {
@@ -219,6 +245,29 @@ a:active {
 
 .card-body canvas { 
     width: 100%!important;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+  
+th, td {
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 12px 24px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #F7F7F7;
+}
+  
+tbody tr:nth-child(even) {
+    background-color: white;
 }
     
 
