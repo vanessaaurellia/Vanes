@@ -156,10 +156,13 @@ a:active {
 }
 
 .card {
-    position: relative;
     word-wrap: break-word;
     padding: 12px;
-    flex: 4 auto;
+    flex: 1 auto;
+}
+
+.card.chart {
+    flex: 3 auto;
 }
 
 .card .card-inner {
@@ -178,6 +181,9 @@ a:active {
 
 .card-body {
     padding: 0.75rem 1.25rem 0rem 1.25rem;
+}
+
+.card-body.large {
     font-size: 40px;
     font-weight: 600;
 }
