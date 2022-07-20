@@ -125,6 +125,10 @@ a {
     color: #1698DA;
 }
 
+a.nav-link {
+    color: #fff;
+}
+
 a:link.role-button {
     color: #fff;
     text-decoration: none;
