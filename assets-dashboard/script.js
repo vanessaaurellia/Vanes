@@ -1,6 +1,5 @@
 function toggler(){ 
     document.getElementById('sidebar').classList.toggle('active');
-    document.getElementById('container').classList.toggle('active');
 }
 
 

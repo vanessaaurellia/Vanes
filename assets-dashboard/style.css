@@ -60,10 +60,6 @@ nav {
     display: block;
 }
 
-.container.active {
-    padding-left: 240px;
-}
-
 .main {
     margin-top: 55px;
 }
