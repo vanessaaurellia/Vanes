@@ -266,8 +266,11 @@ table {
 th, td {
     text-align: left;
     font-size: 14px;
-    border-bottom: 1px solid #E5E5E5;
     padding: 12px 24px;
+}
+
+tr {
+    border-bottom: 1px solid #E5E5E5;
 }
 
 table tr:nth-child(odd) {
@@ -278,7 +281,7 @@ table tr:nth-child(even) {
     background-color: white;
 }
 
-table td:last-child {
+tr:last-child {
     border-bottom: none;
 }
 
