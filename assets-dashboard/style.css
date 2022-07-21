@@ -285,6 +285,66 @@ tr:last-child {
     border-bottom: none;
 }
 
+.form-select {
+    height: 36px;
+    width: 80px;
+    border-radius: 10px;
+    border: 1px solid #E7E7E7;
+    text-align: center;
+    margin: 0px 5px;
+}
+
+.form-control {
+    height: 36px;
+    width: 200px;
+    text-align: center;
+    text-align: left;
+    padding: 0px 10px;
+    margin: 0px;
+}
+
+select:focus {
+    outline: none;
+}
+
+input[type=search], input[type=search]:focus {
+    border-radius: 10px;
+    border: 1px solid #E7E7E7;
+    border-right: none!important;
+    outline: none;
+}
+
+.search-button {
+    height: 36px;
+    border: 1px solid #E7E7E7;
+    border-left: none!important;
+    border-radius: 0px 10px 10px 0px;
+    background-color: white;
+    margin-left: -20px;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.back-nav {
+    padding: 12px;
+}
+
+.back {
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 20%);
+    cursor: pointer;
+}
+
+.fa-chevron-left {
+    font-size: 0.8em;
+}
+
 @media screen and (min-width: 768px) {
     .sidebar {
         display: block;
