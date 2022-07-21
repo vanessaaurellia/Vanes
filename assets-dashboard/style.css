@@ -345,6 +345,41 @@ input[type=search], input[type=search]:focus {
     font-size: 0.8em;
 }
 
+.event-picture {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin: 0px;
+    padding: 0px;
+    border: 4px solid white;
+}
+
+.event-header {
+    background-image: url('img/header.png');
+    border-radius: 10px 10px 0px 0px;
+    height: 334px;
+}
+
+.event-body {
+    padding: 0px 20px 32px 80px;
+    margin-top: -100px;
+    display: flex;
+}
+
+.event-wrapper {
+    padding: 118px 0px 0px 32px;
+}
+
+.event-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.event-subtitle {
+    color: #A2A2A2;
+    font-size: 18px;
+}
+
 @media screen and (min-width: 768px) {
     .sidebar {
         display: block;
