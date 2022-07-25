@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="assets-dashboard/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets-dashboard/icons.css">
     <link rel="stylesheet" href="assets-dashboard/style.css">
+    <meta name="google-signin-client_id" content="664893256048-dipkgniadlt36bakjnk9cejnr6pr56gi.apps.googleusercontent.com">
+        <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
 </head>
 
 <body>
@@ -331,11 +333,20 @@
                     </div>
                 </div>
             </div>
+
+            <div class="section">
+                <!-- The Sign-in button. This will run `queryReports()` on success. -->
+                <p class="g-signin2" data-onsuccess="queryReports"></p>
+
+                <!-- The API response will be printed here. -->
+                <textarea cols="80" rows="20" id="query-output"></textarea>
+            </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets-dashboard/script.js"></script>
+    <script src="https://apis.google.com/js/client:platform.js"></script>
 </body>
 
 </html>
