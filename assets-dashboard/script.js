@@ -3,7 +3,7 @@ function toggler(){
 }
 
 // Replace with your view ID.
-var VIEW_ID = '<REPLACE_WITH_VIEW_ID>';
+var VIEW_ID = '266884203';
 
 // Query the API and print the results to the page.
 function queryReports() {
