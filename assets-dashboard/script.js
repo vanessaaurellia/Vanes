@@ -2,9 +2,6 @@ function toggler(){
     document.getElementById('sidebar').classList.toggle('active');
 }
 
-// Replace with your view ID.
-var VIEW_ID = '266884203';
-
 // Query the API and print the results to the page.
 // function queryReports() {
 //   gapi.client.request({

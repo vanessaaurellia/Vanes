@@ -352,6 +352,7 @@
                         scope: 'https://www.googleapis.com/auth/analytics.readonly',
                         callback: (tokenResponse) => {
                           access_token = tokenResponse.access_token;
+                          console.log(tokenResponse)
                         },
                       });
                     }
@@ -361,6 +362,7 @@
                     function loadShit() {
                       var xhr = new XMLHttpRequest();
                       xhr.open('POST', 'https://analyticsreporting.googleapis.com/v4/reports:batchGet');
+                      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                       xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
                       xhr.onreadystatechange = function() {
                             if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -368,7 +370,24 @@
                                 console.log(xhr.responseText)
                             }
                       }
-                      xhr.send();
+                      xhr.send(JSON.stringify({
+                        reportRequests: [
+                          {
+                            viewId: '266884203',
+                            dateRanges: [
+                              {
+                                startDate: '7daysAgo',
+                                endDate: 'today'
+                              }
+                            ],
+                            metrics: [
+                              {
+                                expression: 'ga:sessions'
+                              }
+                            ]
+                          }
+                        ]
+                      }));
 
                     }
                   </script>
