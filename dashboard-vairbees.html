@@ -359,7 +359,7 @@
                     function getToken() {
                       client.requestAccessToken();
                     }
-                    function loadShit(token) {
+                    function loadReports(token) {
                       var xhr = new XMLHttpRequest();
                       xhr.open('POST', 'https://analyticsreporting.googleapis.com/v4/reports:batchGet');
                       xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -368,6 +368,8 @@
                             if (xhr.readyState == XMLHttpRequest.DONE) {
                                 alert(xhr.responseText);
                                 console.log(xhr.responseText)
+                                const reportsDone = JSON.parse(xhr.responseText)
+                                console.log(reportsDone)
                             }
                       }
                       xhr.send(JSON.stringify({
@@ -393,7 +395,7 @@
                   </script>
                   <h1>Google Identity Services Authorization Token model</h1>
                   <button onclick="getToken();">Get access token</button><br><br>
-                  <button onclick="(()=>loadShit(access_token))();">Load Shit</button><br><br>
+                  <button onclick="(()=>loadReports(access_token))();">Load Reports</button><br><br>
             </div>
         </div>
     </div>
