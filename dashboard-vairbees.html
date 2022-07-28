@@ -336,8 +336,7 @@
             <div class="section">
                 <script src="https://accounts.google.com/gsi/client" async defer></script>
                 <div id="g_id_onload"
-                    data-client_id="439070870397-pulp9ogpins8l40jjl2ub2sakk4c1jm9.apps.googleusercontent.com"
-                    data-callback="queryReports">
+                    data-client_id="439070870397-pulp9ogpins8l40jjl2ub2sakk4c1jm9.apps.googleusercontent.com">
                 </div>
                 <div class="g_id_signin" data-type="standard"></div>
             </div>
@@ -349,9 +348,8 @@
               
                     function initClient() {
                       client = google.accounts.oauth2.initTokenClient({
-                        client_id: 'YOUR_CLIENT_ID',
-                        scope: 'https://www.googleapis.com/auth/calendar.readonly \
-                                https://www.googleapis.com/auth/contacts.readonly',
+                        client_id: '439070870397-pulp9ogpins8l40jjl2ub2sakk4c1jm9.apps.googleusercontent.com',
+                        scope: 'https://www.googleapis.com/auth/analytics.readonly',
                         callback: (tokenResponse) => {
                           access_token = tokenResponse.access_token;
                         },
@@ -360,20 +358,23 @@
                     function getToken() {
                       client.requestAccessToken();
                     }
-                    function revokeToken() {
-                      google.accounts.oauth2.revoke(access_token, () => {console.log('access token revoked')});
-                    }
-                    function loadCalendar() {
+                    function loadShit() {
                       var xhr = new XMLHttpRequest();
-                      xhr.open('GET', 'https://www.googleapis.com/calendar/v3/calendars/primary/events');
+                      xhr.open('POST', 'https://analyticsreporting.googleapis.com/v4/reports:batchGet');
                       xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
+                      xhr.onreadystatechange = function() {
+                            if (xhr.readyState == XMLHttpRequest.DONE) {
+                                alert(xhr.responseText);
+                                console.log(xhr.responseText)
+                            }
+                      }
                       xhr.send();
+
                     }
                   </script>
                   <h1>Google Identity Services Authorization Token model</h1>
                   <button onclick="getToken();">Get access token</button><br><br>
-                  <button onclick="loadCalendar();">Load Calendar</button><br><br>
-                  <button onclick="revokeToken();">Revoke token</button>
+                  <button onclick="loadShit();">Load Shit</button><br><br>
             </div>
         </div>
     </div>
