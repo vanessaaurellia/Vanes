@@ -359,11 +359,11 @@
                     function getToken() {
                       client.requestAccessToken();
                     }
-                    function loadShit() {
+                    function loadShit(token) {
                       var xhr = new XMLHttpRequest();
                       xhr.open('POST', 'https://analyticsreporting.googleapis.com/v4/reports:batchGet');
                       xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                      xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
+                      xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                       xhr.onreadystatechange = function() {
                             if (xhr.readyState == XMLHttpRequest.DONE) {
                                 alert(xhr.responseText);
@@ -393,7 +393,7 @@
                   </script>
                   <h1>Google Identity Services Authorization Token model</h1>
                   <button onclick="getToken();">Get access token</button><br><br>
-                  <button onclick="loadShit();">Load Shit</button><br><br>
+                  <button onclick="(()=>loadShit(access_token))();">Load Shit</button><br><br>
             </div>
         </div>
     </div>
