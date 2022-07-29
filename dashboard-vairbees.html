@@ -362,7 +362,7 @@
                                 console.log(xhr.responseText)
                                 const reportsDone = JSON.parse(xhr.responseText)
                                 console.log(reportsDone)
-                                console.log(xhr.responseText.result.reports[0].data.rows.metrics[0].values[0])
+                                console.log(xhr.responseText.result.reports.data.rows.metrics[0].values[0])
                                 document.getElementById("displayPageview").innerHTML = xhr.responseText.result;
                             }
                       }
