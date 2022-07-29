@@ -374,7 +374,11 @@
                                 endDate: 'today'
                               }
                             ],
-                            metrics: dataMetrics
+                            metrics: [
+                              {
+                                expression: 'ga:sessions'
+                              }
+                            ]
                           }
                         ]
                       }));
