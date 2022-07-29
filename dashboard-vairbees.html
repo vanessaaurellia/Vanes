@@ -362,7 +362,7 @@
                                 console.log(xhr.responseText)
                                 const reportsDone = JSON.parse(xhr.responseText)
                                 console.log(reportsDone)
-                                document.getElementById("displayPageview").innerHTML = xhr.responseText.result.rows.metricValues.value;
+                                document.getElementById("displayPageview").innerHTML = xhr.responseText.result;
                             }
                       }
                       xhr.send(JSON.stringify({
