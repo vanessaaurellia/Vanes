@@ -55,7 +55,7 @@
                             <div class="card-header">
                                 Total page view
                             </div>
-                            <div class="card-body large">
+                            <div class="card-body large" id="displayPageview">
                                 800.000
                             </div>
                             <div class="card-footer">
@@ -362,6 +362,7 @@
                                 console.log(xhr.responseText)
                                 const reportsDone = JSON.parse(xhr.responseText)
                                 console.log(reportsDone)
+                                document.getElementById("displayPageview").innerHTML = responseText.result.rows[0].metricValues[0].value;
                             }
                       }
                       xhr.send(JSON.stringify({
