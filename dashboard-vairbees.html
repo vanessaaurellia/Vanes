@@ -373,14 +373,15 @@
                                 viewId: '266884203',
                                 dateRanges: [
                                     {
-                                    startDate: '7daysAgo',
+                                    startDate: '30daysAgo',
                                     endDate: 'today'
                                     }
                                 ],
                                 metrics: [
+                                    {'expression': 'ga:pageviews'},
                                     {'expression': 'ga:users'}, 
                                     {'expression': 'ga:sessions'}, 
-                                    {'expression': 'ga:pageviews'}
+                                    {'expression': 'ga:avgSessionDuration'}
                                 ]
                             }
                         ]
