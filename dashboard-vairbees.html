@@ -362,7 +362,7 @@
                             if (xhr.readyState == XMLHttpRequest.DONE) {
                                 alert(xhr.responseText);
                                 console.log(xhr.responseText);
-                                const reportsDone = JSON.stringify(xhr.responseText.result, null, 2);
+                                const reportsDone = JSON.stringify(xhr.responseText.result);
                                 console.log(reportsDone);
                                 document.getElementById("displayPageview").innerHTML = reportsDone;
                             }
@@ -370,18 +370,18 @@
                         xhr.send(JSON.stringify({
                         reportRequests: [
                             {
-                            viewId: '266884203',
-                            dateRanges: [
-                                {
-                                startDate: '7daysAgo',
-                                endDate: 'today'
-                                }
-                            ],
-                            metrics: [
-                                {
-                                    expression: 'ga:pageviews'
-                                }
-                            ]
+                                viewId: '266884203',
+                                dateRanges: [
+                                    {
+                                    startDate: '7daysAgo',
+                                    endDate: 'today'
+                                    }
+                                ],
+                                metrics: [
+                                    {'expression': 'ga:users'}, 
+                                    {'expression': 'ga:sessions'}, 
+                                    {'expression': 'ga:pageviews'}
+                                ]
                             }
                         ]
                         }));
