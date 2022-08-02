@@ -334,69 +334,13 @@
             </div>
 
             <div class="section">
-                <script>
-                    var client;
-                    var access_token;
-              
-                    function initClient() {
-                      client = google.accounts.oauth2.initTokenClient({
-                        client_id: '439070870397-pulp9ogpins8l40jjl2ub2sakk4c1jm9.apps.googleusercontent.com',
-                        scope: 'https://www.googleapis.com/auth/analytics.readonly',
-                        callback: (tokenResponse) => {
-                          access_token = tokenResponse.access_token;
-                          console.log(tokenResponse)
-                        },
-                      });
-                    }
-                    function getToken() {
-                      client.requestAccessToken();
-                    }
-                    function loadReports(token) {
-                      var xhr = new XMLHttpRequest();
-                      xhr.open('POST', 'https://analyticsreporting.googleapis.com/v4/reports:batchGet');
-                      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                      xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                      xhr.onreadystatechange = function() {
-                            if (xhr.readyState == XMLHttpRequest.DONE) {
-                                alert(xhr.responseText);
-                                console.log(xhr.responseText)
-                                const reportsDone = JSON.parse(xhr.responseText)
-                                console.log(reportsDone)
-                                console.log(xhr.responseText.result.reports[0].data.rows[0].metrics[0].values)
-                                document.getElementById("displayPageview").innerHTML = xhr.responseText.result;
-                            }
-                      }
-                      xhr.send(JSON.stringify({
-                        reportRequests: [
-                          {
-                            viewId: '266884203',
-                            dateRanges: [
-                              {
-                                startDate: '7daysAgo',
-                                endDate: 'today'
-                              }
-                            ],
-                            metrics: [
-                                {
-                                    expression: 'ga:pageviews'
-                                }
-                            ]
-                          }
-                        ]
-                      }));
-
-                    }
-                  </script>
-                  <button onclick="getToken();">Get access token</button><br><br>
-                  <button onclick="(()=>loadReports(access_token))();">Load Reports</button><br><br>
+                <button onclick="getToken();">Get access token</button>
+                <button onclick="(()=>loadReports(access_token))();">Load Reports</button>
             </div>
         </div>
     </div>
-
-    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets-dashboard/script.js"></script>
-
 </body>
 
 </html>

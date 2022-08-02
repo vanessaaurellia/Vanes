@@ -1,0 +1,51 @@
+{
+    "reports": [
+      {
+        "columnHeader": {
+          "metricHeader": {
+            "metricHeaderEntries": [
+              {
+                "name": "ga:pageviews",
+                "type": "INTEGER"
+              }
+            ]
+          }
+        },
+        "data": {
+          "rows": [
+            {
+              "metrics": [
+                {
+                  "values": [
+                    "2498"
+                  ]
+                }
+              ]
+            }
+          ],
+          "totals": [
+            {
+              "values": [
+                "2498"
+              ]
+            }
+          ],
+          "rowCount": 1,
+          "minimums": [
+            {
+              "values": [
+                "2498"
+              ]
+            }
+          ],
+          "maximums": [
+            {
+              "values": [
+                "2498"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
