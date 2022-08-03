@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets-dashboard/icons.css">
     <link rel="stylesheet" href="assets-dashboard/style.css">
     <script src="https://accounts.google.com/gsi/client" onload="initClient()" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -71,7 +72,7 @@
                             <div class="card-header">
                                 Total user
                             </div>
-                            <div class="card-body large">
+                            <div class="card-body large" id="displayUser">
                                 80.000
                             </div>
                             <div class="card-footer">
@@ -87,7 +88,7 @@
                             <div class="card-header">
                                 Total session
                             </div>
-                            <div class="card-body large">
+                            <div class="card-body large" id="displayTotalSession">
                                 32.500
                             </div>
                             <div class="card-footer">
@@ -103,8 +104,8 @@
                             <div class="card-header">
                                 Total avg visit time
                             </div>
-                            <div class="card-body large">
-                                160 S
+                            <div class="card-body large" >
+                                <span id="displayAvgVisit">160</span> S
                             </div>
                             <div class="card-footer">
                                 <div class="red">
@@ -362,9 +363,12 @@
                             if (xhr.readyState == XMLHttpRequest.DONE) {
                                 alert(xhr.responseText);
                                 console.log(xhr.responseText);
-                                const reportsDone = JSON.stringify(xhr.responseText.result);
+                                const reportsDone = JSON.parse(xhr.responseText);
                                 console.log(reportsDone);
-                                document.getElementById("displayPageview").innerHTML = reportsDone;
+                                document.getElementById("displayPageview").innerHTML = parseInt(response.reports[0].data.rows[0].metrics[0].values[0]).toLocaleString();
+                                document.getElementById("displayUser").innerHTML = parseInt(response.reports[0].data.rows[0].metrics[0].values[1]).toLocaleString();
+                                document.getElementById("displayTotalSession").innerHTML = parseInt(response.reports[0].data.rows[0].metrics[0].values[2]).toLocaleString();
+                                document.getElementById("displayAvgVisit").innerHTML = parseInt(response.reports[0].data.rows[0].metrics[0].values[3]);
                             }
                         }
                         xhr.send(JSON.stringify({

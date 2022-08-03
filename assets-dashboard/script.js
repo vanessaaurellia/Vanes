@@ -2,6 +2,18 @@ function toggler(){
     document.getElementById('sidebar').classList.toggle('active');
 }
 
+/*$.ajax({
+    method: 'GET',
+    url: 'database/data.json',
+    success: function(response) {
+        document.getElementById("displayPageview").innerHTML = parseInt(response.reports[0].data.rows[0].metrics[0].values[0]).toLocaleString();
+        document.getElementById("displayUser").innerHTML = parseInt(response.reports[0].data.rows[0].metrics[0].values[1]).toLocaleString();
+        document.getElementById("displayTotalSession").innerHTML = parseInt(response.reports[0].data.rows[0].metrics[0].values[2]).toLocaleString();
+        document.getElementById("displayAvgVisit").innerHTML = parseInt(response.reports[0].data.rows[0].metrics[0].values[3]);
+    }
+})*/
+  
+
 const labels = [
     'January',
     'February',
