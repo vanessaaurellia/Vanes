@@ -1,51 +1,75 @@
 {
-    "reports": [
-      {
-        "columnHeader": {
-          "metricHeader": {
-            "metricHeaderEntries": [
-              {
-                "name": "ga:pageviews",
-                "type": "INTEGER"
-              }
-            ]
-          }
-        },
-        "data": {
-          "rows": [
+  "reports": [
+    {
+      "columnHeader": {
+        "metricHeader": {
+          "metricHeaderEntries": [
             {
-              "metrics": [
-                {
-                  "values": [
-                    "2498"
-                  ]
-                }
-              ]
-            }
-          ],
-          "totals": [
+              "name": "ga:pageviews",
+              "type": "INTEGER"
+            },
             {
-              "values": [
-                "2498"
-              ]
-            }
-          ],
-          "rowCount": 1,
-          "minimums": [
+              "name": "ga:users",
+              "type": "INTEGER"
+            },
             {
-              "values": [
-                "2498"
-              ]
-            }
-          ],
-          "maximums": [
+              "name": "ga:sessions",
+              "type": "INTEGER"
+            },
             {
-              "values": [
-                "2498"
-              ]
+              "name": "ga:avgSessionDuration",
+              "type": "TIME"
             }
           ]
         }
+      },
+      "data": {
+        "rows": [
+          {
+            "metrics": [
+              {
+                "values": [
+                  "63450",
+                  "6005",
+                  "25208",
+                  "202.97112027927642"
+                ]
+              }
+            ]
+          }
+        ],
+        "totals": [
+          {
+            "values": [
+              "63450",
+              "6005",
+              "25208",
+              "202.97112027927642"
+            ]
+          }
+        ],
+        "rowCount": 1,
+        "minimums": [
+          {
+            "values": [
+              "63450",
+              "6005",
+              "25208",
+              "202.97112027927642"
+            ]
+          }
+        ],
+        "maximums": [
+          {
+            "values": [
+              "63450",
+              "6005",
+              "25208",
+              "202.97112027927642"
+            ]
+          }
+        ]
       }
-    ]
-  }
+    }
+  ]
+}
