@@ -365,6 +365,7 @@
                                 console.log(xhr.responseText);
                                 const reportsDone = JSON.parse(xhr.responseText);
                                 console.log(reportsDone);
+
                                 //document.getElementById("displayPageview").innerHTML = parseInt(xhr.responseText.reports[0].data.rows[0].metrics[0].values[0]).toLocaleString();
                             }
                         }
@@ -384,29 +385,21 @@
                                     {'expression': 'ga:sessions'}, 
                                     {'expression': 'ga:avgSessionDuration'}
                                     
-                                ]/*,
+                                ],
                                 dimensions: [
-                                    {'name': 'ga:operatingSystem'},
-                                    {'name': 'ga:country'}
-                                ]*/
+                                    {'name': 'ga:deviceCategory'}
+                                ]
                             }
                         ]
                         }));
 
-                        (function(w,d,s,g,js,fs){
-                        g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
-                        js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
-                        js.src='https://apis.google.com/js/platform.js';
-                        fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
-                        }(window,document,'script'));
-                        var timeline = new gapi.analytics.googleCharts.DataChart({
-                        reportType: 'ga',
-                        query: {
-                        'dimensions': 'ga:date',
-                        'metrics': 'ga:sessions',
-                        'start-date': '30daysAgo',
-                        'end-date': 'yesterday',
-                        },
+                        var dataChart1 = new gapi.analytics.googleCharts.DataChart({
+                            query: {
+                            'start-date': '90daysAgo',
+                            'end-date': 'today',
+                            'metrics': 'ga:sessions,ga:users',
+                            'dimensions': 'ga:date'
+                            },
                         chart: {
                             'container': 'myChart',
                             'type': 'LINE',
