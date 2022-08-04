@@ -365,10 +365,7 @@
                                 console.log(xhr.responseText);
                                 const reportsDone = JSON.parse(xhr.responseText);
                                 console.log(reportsDone);
-                                document.getElementById("displayPageview").innerHTML = parseInt(xhr.responseText.reports[0].data.rows[0].metrics[0].values[0]).toLocaleString();
-                                document.getElementById("displayUser").innerHTML = parseInt(xhr.responseText.reports[0].data.rows[0].metrics[0].values[1]).toLocaleString();
-                                document.getElementById("displayTotalSession").innerHTML = parseInt(xhr.responseText.reports[0].data.rows[0].metrics[0].values[2]).toLocaleString();
-                                document.getElementById("displayAvgVisit").innerHTML = parseInt(xhr.responseText.reports[0].data.rows[0].metrics[0].values[3]);
+                                //document.getElementById("displayPageview").innerHTML = parseInt(xhr.responseText.reports[0].data.rows[0].metrics[0].values[0]).toLocaleString();
                             }
                         }
                         xhr.send(JSON.stringify({
@@ -387,11 +384,11 @@
                                     {'expression': 'ga:sessions'}, 
                                     {'expression': 'ga:avgSessionDuration'}
                                     
-                                ]/*,
+                                ],
                                 dimensions: [
                                     {'name': 'ga:operatingSystem'},
                                     {'name': 'ga:country'}
-                                ]*/
+                                ]
                             }
                         ]
                         }));
