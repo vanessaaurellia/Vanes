@@ -259,8 +259,7 @@ a:active.role-button {
 table {
     width: 100%;
     border-collapse: collapse;
-    overflow: auto;
-    overflow: scroll;
+    overflow:hidden;
     border-radius: 10px;
 }
   
