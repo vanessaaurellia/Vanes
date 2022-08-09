@@ -335,83 +335,8 @@
             </div>
 
             <div class="section">
-                <script>
-                    var client;
-                    var access_token;
-
-                    function initClient() {
-                        client = google.accounts.oauth2.initTokenClient({
-                        client_id: '439070870397-pulp9ogpins8l40jjl2ub2sakk4c1jm9.apps.googleusercontent.com',
-                        scope: 'https://www.googleapis.com/auth/analytics.readonly',
-                        callback: (tokenResponse) => {
-                            access_token = tokenResponse.access_token;
-                            console.log(tokenResponse)
-                        },
-                        });
-                    }
-
-                    function getToken() {
-                        client.requestAccessToken();
-                    }
-
-                    function loadReports(token) {
-                        var xhr = new XMLHttpRequest();
-                        xhr.open('POST', 'https://analyticsreporting.googleapis.com/v4/reports:batchGet');
-                        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                        xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                        xhr.onreadystatechange = function() {
-                            if (xhr.readyState == XMLHttpRequest.DONE) {
-                                alert(xhr.responseText);
-                                console.log(xhr.responseText);
-                                const reportsDone = JSON.parse(xhr.responseText);
-                                console.log(reportsDone);
-
-                                //document.getElementById("displayPageview").innerHTML = parseInt(xhr.responseText.reports[0].data.rows[0].metrics[0].values[0]).toLocaleString();
-                            }
-                        }
-                        xhr.send(JSON.stringify({
-                        reportRequests: [
-                            {
-                                viewId: '266884203',
-                                dateRanges: [
-                                    {
-                                        startDate: '30daysAgo',
-                                        endDate: 'today'
-                                    }
-                                ],
-                                metrics: [
-                                    {'expression': 'ga:pageviews'},
-                                    {'expression': 'ga:users'}, 
-                                    {'expression': 'ga:sessions'}, 
-                                    {'expression': 'ga:avgSessionDuration'}
-                                    
-                                ],
-                                dimensions: [
-                                    {'name': 'ga:deviceCategory'}
-                                ]
-                            }
-                        ]
-                        }));
-
-                        var dataChart1 = new gapi.analytics.googleCharts.DataChart({
-                            query: {
-                            'start-date': '90daysAgo',
-                            'end-date': 'today',
-                            'metrics': 'ga:sessions,ga:users',
-                            'dimensions': 'ga:date'
-                            },
-                        chart: {
-                            'container': 'myChart',
-                            'type': 'LINE',
-                            'options': {
-                                'width': '100%'
-                            }
-                        }
-                        });
-                    }
-                </script>
-                <button onclick="getToken();">Get access token</button>
-                <button onclick="(()=>loadReports(access_token))();">Load Reports</button>
+                <button id="btn-access">Login</button>
+                <button id="btn-loadrep">Load Reports</button>
             </div>
         </div>
     </div>
