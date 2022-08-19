@@ -150,7 +150,7 @@ function chart() {
     });
 
     const countryChart = new Chart(ctx6, {
-        type: 'polarArea',
+        type: 'bar',
         data: {
             labels: [
                 'January',
@@ -158,13 +158,12 @@ function chart() {
                 'March',
             ],
             datasets: [{
+                label: 'User',
                 data: [12, 19, 3],
                 backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(75, 192, 192)',
-                    'rgb(255, 205, 86)',
-                    'rgb(201, 203, 207)',
-                    'rgb(54, 162, 235)'
+                    'rgba(118, 183, 67, 1)',
+                    'rgba(249, 206, 48, 1)',
+                    'rgba(224, 79, 26, 1)'
                   ],
                 hoverOffset: 4
             }]
@@ -331,8 +330,8 @@ async function getSingleGapiBatchReportData(token, type = "default", vId, { debu
                         viewId: vId, 
                         dateRanges: [
                             {
-                                startDate: '180daysAgo',
-                                endDate: 'today'
+                                startDate: '2022-04-01',
+                                endDate: '2022-04-10'
                             }
                         ],
                         metrics: [
@@ -356,7 +355,7 @@ async function getSingleGapiBatchReportData(token, type = "default", vId, { debu
 
                         ...( type === "country" && {
                             dimensions: [
-                                {'name': 'ga:country'}
+                                {'name': 'ga:region'}
                             ]
                         })
                     }
