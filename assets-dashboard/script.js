@@ -289,7 +289,7 @@ function chart() {
 var client;
 let access_token = localStorage.getItem("VB_ACC_TOKEN") || null;
 
-function initClient() {
+window.initClient = function() {
     client = google.accounts.oauth2.initTokenClient({
     client_id: '439070870397-pulp9ogpins8l40jjl2ub2sakk4c1jm9.apps.googleusercontent.com',
     scope: 'https://www.googleapis.com/auth/analytics.readonly',
