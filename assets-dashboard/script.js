@@ -330,8 +330,8 @@ async function getSingleGapiBatchReportData(token, type = "default", vId, { debu
                         viewId: vId, 
                         dateRanges: [
                             {
-                                startDate: '2022-04-01',
-                                endDate: '2022-04-10'
+                                startDate: startDATE,
+                                endDate: endDATE
                             }
                         ],
                         metrics: [
