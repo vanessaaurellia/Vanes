@@ -249,19 +249,6 @@ function chart() {
 var client;
 let access_token = localStorage.getItem("VB_ACC_TOKEN") || null;
 
-function initClient() {
-    client = google.accounts.oauth2.initTokenClient({
-    client_id: '439070870397-pulp9ogpins8l40jjl2ub2sakk4c1jm9.apps.googleusercontent.com',
-    scope: 'https://www.googleapis.com/auth/analytics.readonly',
-    callback: (tokenResponse) => {
-        access_token = tokenResponse.access_token;
-        console.log(tokenResponse);
-        localStorage.setItem("VB_ACC_TOKEN", access_token);
-        location.replace("./dashboard.html");
-    },
-    });
-}
-
 function getToken() {
     client.requestAccessToken();
 }
@@ -287,10 +274,10 @@ function getGapiBatchReport(token, type = "default", { debug, callback } = {
         JSON.stringify({
             reportRequests: [
                 {
-                    viewId: '266884203', 
+                    viewId: '264883937', 
                     dateRanges: [
                         {
-                            startDate: '30daysAgo',
+                            startDate: '180daysAgo',
                             endDate: 'today'
                         }
                     ],
@@ -334,8 +321,4 @@ function loadReports(token) {
             document.getElementById("displayAvgVisit").innerHTML = parseInt(response.reports[0].data.rows[0].metrics[0].values[3]);
         }
     })
-}
-
-document.getElementById("btn-access").onclick = (e)=> {
-    getToken();
 }

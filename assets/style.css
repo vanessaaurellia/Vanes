@@ -19,53 +19,6 @@ body {
     flex-direction: column;
 }
 
-.loginForm {
-    background-color: white;
-    padding: 12px;
-    background-clip: border-box;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-
-}
-
-.loginForm input {
-    display: flex;
-    padding: 10px;
-    border: 1px solid #E5E5E5;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: 500;
-    margin: 12px;
-    width: 200px;
-}
-
-.loginForm button {
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    background-color: #f18700;
-    outline: none;
-    border: 0;
-    border-radius: 6px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    margin: 12px;
-    width: 220px;
-    height: 40px;
-    cursor: pointer;
-}
-
-.loginForm button:hover {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.error {
-    color: red;
-    font-size: 12px;
-    margin-left: 12px;
-}
-
 .login-button {
     padding: 12px 16px 12px 42px;
     border: none;
@@ -88,10 +41,11 @@ body {
 .logo {
     width: 180px;
     height: auto;
-    padding-bottom: 20px;
+    padding-bottom: 32px;
 }
 
 nav {
+    overflow: hidden;
     background-color: rgb(255, 255, 255);
     border-bottom: 1px solid #c8ced3;
     position: fixed;
@@ -138,47 +92,6 @@ nav {
 
 .sidebar.active {
     display: block;
-}
-
-.btn-profile {
-    background-color: white;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    text-align: end;
-    padding: 0;
-}
-
-.dropdownMenu {
-    background-color: white;
-    color: black;
-    border-radius: 3px;
-    position: absolute;
-    white-space: nowrap;
-    right: 20px;
-    font-size: 14px;
-    padding: 16px;
-    width: 200px;
-    border: 1px solid #c8ced3;
-    visibility: hidden;
-}
-
-.dropdownMenu a {
-    color: black;
-}
-
-.dropdown {
-    background-color: transparent;
-    width: 200px;
-    text-align: left;
-}
-
-.dropdownMenu:hover, .dropdown.btn-profile:hover{
-    background-color: #F0F3F5;
-}
-
-.dropdownMenu.active {
-    visibility: visible;
 }
 
 .main {
@@ -384,22 +297,22 @@ table {
     border-radius: 10px;
 }
   
-th, td, thead {
+th, td {
     text-align: left;
     font-size: 14px;
     padding: 12px 24px;
 }
 
-tr, thead {
+tr {
     border-bottom: 1px solid #E5E5E5;
 }
 
 table tr:nth-child(odd) {
-    background-color: white;
-}
-
-table tr:nth-child(even) {
     background-color: #F7F7F7;
+}
+  
+table tr:nth-child(even) {
+    background-color: white;
 }
 
 tr:last-child {
